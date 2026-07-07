@@ -101,6 +101,21 @@ section{padding:90px 5%}
 .benefit-card h3{font-size:1rem;font-weight:700;margin-bottom:10px}
 .benefit-card p{font-size:0.87rem;color:var(--muted);line-height:1.7}
 
+/* DYNAMIC CONTENT SECTION */
+#dynamic-section{display:none;padding:70px 5%;background:var(--dark3);border-top:1px solid rgba(108,61,232,0.1)}
+#dynamic-section.active{display:block}
+.dyn-inner{max-width:900px;margin:0 auto}
+#dyn-video-wrap{margin-bottom:50px;display:none}
+#dyn-video-wrap.active{display:block}
+#dyn-video-title{font-size:1.4rem;font-weight:800;margin-bottom:20px;text-align:center}
+.video-frame{border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:#000;border:1px solid rgba(108,61,232,0.2)}
+.video-frame iframe{width:100%;height:100%;border:0}
+#dyn-image-wrap{display:none}
+#dyn-image-wrap.active{display:block}
+.dyn-img-box{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(108,61,232,0.2)}
+.dyn-img-box img{width:100%;display:block;max-height:500px;object-fit:cover}
+#dyn-image-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(transparent,rgba(7,7,18,0.9));font-size:1.2rem;font-weight:700;line-height:1.5}
+
 /* TESTIMONIALS */
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
 .review-card{background:var(--dark2);border:1px solid rgba(108,61,232,0.1);border-radius:18px;padding:28px;position:relative;overflow:hidden}
@@ -121,13 +136,6 @@ section{padding:90px 5%}
 .urgency-section p{color:var(--muted);max-width:520px;margin:0 auto 36px;line-height:1.8}
 .btn-wa{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--green),#128C7E);color:#fff;padding:18px 38px;border-radius:50px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:all 0.3s;box-shadow:0 8px 30px rgba(37,211,102,0.25)}
 .btn-wa:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(37,211,102,0.4)}
-
-/* PORTFOLIO CTA */
-.portfolio-cta{background:var(--dark2);border-top:1px solid rgba(108,61,232,0.1);text-align:center;padding:80px 5%}
-.portfolio-cta h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:900;margin-bottom:14px}
-.portfolio-cta p{font-size:0.95rem;color:var(--muted);max-width:520px;margin:0 auto 32px;line-height:1.8}
-.portfolio-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
-.ptag{background:rgba(108,61,232,0.07);border:1px solid rgba(108,61,232,0.2);padding:6px 14px;border-radius:50px;font-size:0.8rem;color:var(--text)}
 
 footer{background:var(--dark);padding:36px 5%;text-align:center;border-top:1px solid rgba(255,255,255,0.04)}
 footer p{color:var(--muted);font-size:0.85rem}
@@ -290,6 +298,22 @@ footer p{color:var(--muted);font-size:0.85rem}
   </div>
 </section>
 
+<!-- ══ DYNAMIC CONTENT (controlled from admin) ══ -->
+<div id="dynamic-section">
+  <div class="dyn-inner">
+    <div id="dyn-video-wrap">
+      <div id="dyn-video-title"></div>
+      <div class="video-frame"><iframe id="dyn-iframe" allowfullscreen></iframe></div>
+    </div>
+    <div id="dyn-image-wrap">
+      <div class="dyn-img-box">
+        <img id="dyn-img" src="" alt=""/>
+        <div id="dyn-image-overlay"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="reviews">
   <div class="sec-head reveal" style="text-align:center">
     <div class="sec-label">قصص نجاح حقيقية</div>
@@ -326,28 +350,61 @@ footer p{color:var(--muted);font-size:0.85rem}
   </a>
 </div>
 
-<section class="portfolio-cta">
-  <h2>تريد صفحة <span class="hl-p">مثل هذه</span> لدورتك؟ 🚀</h2>
-  <p>نبني لك صفحة هبوط احترافية تزيد من تسجيلات دورتك أو خدمتك — بنفس هذا المستوى</p>
-  <a href="https://wa.me/212778878421?text=السلام عليكم، رأيت تصميم Business Pro Academy وأريد نسخة مخصصة لدورتي" class="btn-wa" target="_blank">
-    💬 اطلب موقعك الآن
-  </a>
-  <div class="portfolio-tags">
-    <span class="ptag">⚡ جاهز خلال 48 ساعة</span>
-    <span class="ptag">🎨 بهويتك وألوانك</span>
-    <span class="ptag">📱 متوافق مع الجوال</span>
-    <span class="ptag">📊 يزيد التسجيلات</span>
-  </div>
-</section>
-
 <footer><p>© 2025 Business Pro Academy — جميع الحقوق محفوظة</p></footer>
 <a href="https://wa.me/212778878421" class="wa-float" target="_blank">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.136 1.535 5.876L0 24l6.292-1.517C8.002 23.447 9.96 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.897 0-3.7-.512-5.268-1.41l-.376-.223-3.896.94.988-3.797-.247-.39C2.512 15.7 2 13.897 2 12 2 6.478 6.478 2 12 2s10 4.478 10 10-4.478 10-10 10z"/></svg>
 </a>
 
 <script>
+/* ── ANALYTICS TRACKING ── */
+(function(){
+  // count visit
+  const v = parseInt(localStorage.getItem('bp_visits')||'0') + 1;
+  localStorage.setItem('bp_visits', v);
+  // track time on page
+  const start = Date.now();
+  window.addEventListener('beforeunload', function(){
+    const secs = Math.round((Date.now()-start)/1000);
+    if(secs < 2) return;
+    const arr = JSON.parse(localStorage.getItem('bp_times')||'[]');
+    arr.push(secs);
+    if(arr.length > 500) arr.splice(0, arr.length-500);
+    localStorage.setItem('bp_times', JSON.stringify(arr));
+  });
+})();
+
+/* ── LOAD DYNAMIC CONTENT ── */
+(function(){
+  const videoUrl   = localStorage.getItem('bp_video_url')||'';
+  const videoTitle = localStorage.getItem('bp_video_title')||'';
+  const imgData    = localStorage.getItem('bp_image_data')||'';
+  const imgText    = localStorage.getItem('bp_image_text')||'';
+
+  let hasContent = false;
+
+  if(videoUrl){
+    const ytMatch = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+    const embedUrl = ytMatch ? 'https://www.youtube.com/embed/'+ytMatch[1] : videoUrl;
+    document.getElementById('dyn-iframe').src = embedUrl;
+    document.getElementById('dyn-video-title').textContent = videoTitle;
+    document.getElementById('dyn-video-wrap').classList.add('active');
+    hasContent = true;
+  }
+  if(imgData){
+    document.getElementById('dyn-img').src = imgData;
+    document.getElementById('dyn-image-overlay').textContent = imgText;
+    document.getElementById('dyn-image-wrap').classList.add('active');
+    if(hasContent) document.getElementById('dyn-image-wrap').style.marginTop='40px';
+    hasContent = true;
+  }
+  if(hasContent) document.getElementById('dynamic-section').classList.add('active');
+})();
+
+/* ── REVEAL ANIMATION ── */
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ── COUNTERS ── */
 const counters=document.querySelectorAll('.stat-num[data-target]');
 const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const t=+e.target.dataset.target;let c=0;const s=t/60;const timer=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(timer)}e.target.textContent=Math.floor(c)+(t>=100?'+':'')},30);cObs.unobserve(e.target)}})});
 counters.forEach(c=>cObs.observe(c));
