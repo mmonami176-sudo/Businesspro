@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Pro Academy - دورة التجارة الإلكترونية المجانية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e94560, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: #f39c12;
+        }
+
+        .header-cta {
+            background: linear-gradient(135deg, #e94560, #c0392b);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .header-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(15, 52, 96, 0.9)), 
+                        url('hero-bg.jpg') center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(243, 156, 18, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(233, 69, 96, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.2);
+            border: 1px solid #f39c12;
+            color: #f39c12;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 span {
+            color: #f39c12;
+            display: block;
+        }
+
+        .hero-subtitle {
+            color: #ecf0f1;
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            color: #f39c12;
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .stat-label {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #e94560, #c0392b);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.6);
+        }
+
+        .hero-cta i {
+            margin-right: 10px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .trust-badge i {
+            color: #f39c12;
+            margin-left: 5px;
+        }
+
+        /* ===== PROBLEMS SECTION ===== */
+        .problems {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+            border: 2px solid #e94560;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .problem-icon {
+            font-size: 50px;
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            color: #1a1a2e;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .problem-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* ===== SOLUTION SECTION ===== */
+        .solution {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+        }
+
+        .solution .section-title {
+            color: white;
+        }
+
+        .solution .section-subtitle {
+            color: #bdc3c7;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            background: rgba(243, 156, 18, 0.1);
+            transform: translateY(-10px);
+            border-color: #f39c12;
+        }
+
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f39c12, #e94560);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+
+        .solution-card h3 {
+            color: #f39c12;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .solution-card p {
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        /* ===== CURRICULUM SECTION ===== */
+        .curriculum {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .curriculum-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .curriculum-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .curriculum-item:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.2);
+        }
+
+        .curriculum-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f39c12, #e94560);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .curriculum-content h3 {
+            color: #1a1a2e;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .curriculum-content p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-quote {
+            font-size: 40px;
+            color: #f39c12;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f39c12, #e94560);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .testimonial-info h4 {
+            color: #1a1a2e;
+            font-size: 16px;
+        }
+
+        .testimonial-info p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .testimonial-stars {
+            color: #f39c12;
+            margin-top: 5px;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h3 {
+            color: #1a1a2e;
+            font-size: 18px;
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            background: #f39c12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 20px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(243, 156, 18, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .final-cta h2 span {
+            color: #f39c12;
+        }
+
+        .final-cta p {
+            color: #ecf0f1;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .urgency-text {
+            color: #e94560;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-cta i {
+            font-size: 30px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #f39c12;
+        }
+
+        .footer p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #f39c12;
+            transform: translateY(-5px);
+        }
+
+        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            animation: bounce 2s infinite;
+            transition: all 0.3s;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .hero-cta {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .whatsapp-cta {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+
+            .header-cta {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">BP</div>
+                <div class="logo-text">Business <span>Pro</span> Academy</div>
+            </div>
+            <a href="#register" class="header-cta">
+                <i class="fab fa-whatsapp"></i> سجل الآن
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-gift"></i> دورة مجانية 100% - لفترة محدودة
+            </div>
+            <h1>
+                اكتشف أسرار التجارة الإلكترونية
+                <span>وابدأ مشروعك الخاص اليوم</span>
+            </h1>
+            <p class="hero-subtitle">
+                انضم لأكثر من 5000 متدرب تعلموا كيف يبنوا دخلهم من الإنترنت
+                <br>
+                بدون خبرة سابقة - بدون رأس مال كبير - بدون مخاطرة
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">+5000</div>
+                    <div class="stat-label">متدرب ناجح</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">نسبة الرضا</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+2000 DH</div>
+                    <div class="stat-label">متوسط الدخل الشهري</div>
+                </div>
+            </div>
+
+            <a href="#register" class="hero-cta">
+                <i class="fas fa-rocket"></i> سجل الآن مجاناً
+            </a>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-check-circle"></i> مجاني 100%
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-check-circle"></i> بدون التزامات
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-check-circle"></i> دعم مستمر
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMS SECTION -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title fade-in">هل تعاني من هذه المشاكل؟</h2>
+            <p class="section-subtitle fade-in">إذا كنت تعاني من أي من هذه المشاكل، فأنت في المكان الصحيح</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>المصاريف كاتزاد والدخل ما كيزيدش</h3>
+                    <p>تحس بالضغط المالي كل شهر وما كتلقى حتى حل يزيد دخلك</p>
+                </div>
+
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>كتقلب على فرصة حقيقية</h3>
+                    <p>عمرت جربت بزاف حوايج ولكن ما لقيتي حتى حاجة ناجحة</p>
+                </div>
+
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>عندك فكرة ولكن ما كتعرفش منين تبدا</h3>
+                    <p>عندك الرغبة والطموح ولكن ناقصك التوجيه والمعرفة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title fade-in">الحل كاين مع Business Pro Academy</h2>
+            <p class="section-subtitle fade-in">نقدم لك كل ما تحتاجه لبناء مشروعك الإلكتروني من الصفر</p>
+            
+            <div class="solution-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>تكوين مجاني 100%</h3>
+                    <p>دورة شاملة بدون أي رسوم مخفية أو التزامات مالية</p>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>من الصفر للاحتراف</h3>
+                    <p>ما تحتاج حتى خبرة سابقة، نبدأ معاك خطوة بخطوة</p>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>دعم ومتابعة مستمرة</h3>
+                    <p>فريقنا معاك في كل خطوة حتى تحقق النجاح</p>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>نتائج مضمونة</h3>
+                    <p>آلاف المتدربين نجحو وبدءو كيحققو دخل قار</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRICULUM SECTION -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title fade-in">ماذا ستتعلم في هذه الدورة؟</h2>
+            <p class="section-subtitle fade-in">محتوى شامل يغطي كل جوانب التجارة الإلكترونية</p>
+            
+            <div class="curriculum-list">
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">1</div>
+                    <div class="curriculum-content">
+                        <h3>أساسيات التجارة الإلكترونية</h3>
+                        <p>فهم السوق الرقمي والفرص المتاحة</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">2</div>
+                    <div class="curriculum-content">
+                        <h3>اختيار المنتج الرابح</h3>
+                        <p>كيف تلقى المنتجات اللي كتبيع مزيان</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">3</div>
+                    <div class="curriculum-content">
+                        <h3>إنشاء متجرك الإلكتروني</h3>
+                        <p>خطوة بخطوة حتى لو ما عندك حتى خبرة تقنية</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">4</div>
+                    <div class="curriculum-content">
+                        <h3>استراتيجيات التسويق الرقمي</h3>
+                        <p>Facebook Ads, Google Ads, SEO والمزيد</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">5</div>
+                    <div class="curriculum-content">
+                        <h3>إدارة الطلبات والشحن</h3>
+                        <p>كيف تدير عملياتك بكفاءة عالية</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-item fade-in">
+                    <div class="curriculum-number">6</div>
+                    <div class="curriculum-content">
+                        <h3>مضاعفة الأرباح</h3>
+                        <p>استراتيجيات متقدمة لزيادة مبيعاتك</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">ماذا يقول متدربونا؟</h2>
+            <p class="section-subtitle fade-in">قصص نجاح حقيقية من أشخاص مثلك</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "والله دورة غي غيرت حياتي، دابا عندي دخل قار كل شهر وكنتي كنحلم بهاد الشي. شكراً Business Pro Academy"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">أ</div>
+                        <div class="testimonial-info">
+                            <h4>أحمد من الدار البيضاء</h4>
+                            <p>متدرب منذ 6 أشهر</p>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "كنت ما كنعرف والو فالتجارة الإلكترونية، دابا كنبيع ونربح كل شهر. الدورة واضحة ومفصلة ومفيدة بزاف"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ف</div>
+                        <div class="testimonial-info">
+                            <h4>فاطمة من الرباط</h4>
+                            <p>متدربة منذ 4 أشهر</p>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "أحسن استثمار وقت درت فحياتي. الدعم والمتابعة ممتازة والنتائج جاءو بسرعة. ننصح بها الجميع"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ي</div>
+                        <div class="testimonial-info">
+                            <h4>يوسف من مراكش</h4>
+                            <p>متدرب منذ 8 أشهر</p>
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">الأسئلة الشائعة</h2>
+            <p class="section-subtitle fade-in">إجابات على أكثر الأسئلة تكراراً</p>
+            
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>هل الدورة مجانية فعلاً؟</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، الدورة مجانية 100% بدون أي رسوم مخفية أو التزامات مالية. نؤمن بأن التعليم حق للجميع.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>هل أحتاج خبرة سابقة؟</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>لا، نبدأ معاك من الصفر تماماً. الدورة مصممة للمبتدئين والمحترفين على حد سواء.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>كيفاش غادي نتواصل معاكم؟</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>بعد التسجيل، غادي نتواصلو معاك عبر واتساب ونرسلو لك كل المعلومات والمواد التكوينية.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>شنو غادي نستافد من الدورة؟</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>غادي تتعلم كلشي من الصفر: كيف تختار المنتج، كيف تبني المتجر، كيف تسوق، وكيف تزيد أرباحك.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>واش كاين دعم بعد الدورة؟</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، فريقنا معاك حتى بعد الدورة. كنجاوبو على أسئلتك وكنساعدوك حتى تحقق نتائج.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta" id="register">
+        <div class="final-cta-content">
+            <h2>
+                لا تفوت هذه الفرصة
+                <span>سجل الآن مجاناً</span>
+            </h2>
+            <p>انضم لآلاف المتدربين الذين غيروا حياتهم مع Business Pro Academy</p>
+            <p class="urgency-text">
+                <i class="fas fa-fire"></i> المقاعد محدودة - سجل الآن قبل ما يسد الباب!
+            </p>
+            <a href="https://wa.me/212649478388?text=مرحبا،%20بغيت%20نسجل%20فالدورة%20المجانية" class="whatsapp-cta">
+                <i class="fab fa-whatsapp"></i>
+                سجل الآن عبر واتساب
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Business <span>Pro</span> Academy</div>
+            <p>نساعدك تبني مشروعك الإلكتروني من الصفر</p>
+            <p>© 2024 Business Pro Academy - جميع الحقوق محفوظة</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/212649478388"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/212649478388?text=مرحبا،%20بغيت%20نسجل%20فالدورة%20المجانية" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header Scroll Effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)';
+                header.style.backdropFilter = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Counter Animation
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        };
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        if (number) {
+                            animateCounter(stat, number);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) {
+            statsObserver.observe(heroStats);
+        }
+    </script>
+</body>
+</html>
+
